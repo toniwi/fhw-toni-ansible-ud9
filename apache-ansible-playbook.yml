@@ -1,0 +1,14 @@
+---
+- name: Playbook1
+  hosts: fhw
+  become: yes
+  tasks:
+  - name: Instalar
+    apt:
+      name: apache2
+      state: present
+  - name: Iniciar
+    service: 
+      name: apache2
+      state: started
+...
