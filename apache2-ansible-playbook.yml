@@ -11,9 +11,6 @@
     service: 
       name: apache2
       state: restarted
-    notify: 
-      - Copiar
-  handlers:
   - name: copiar html
     copy: 
       src: /home/vagrant/ud9-playbooks/ansible.html
