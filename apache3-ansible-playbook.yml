@@ -12,9 +12,9 @@
       name: apache2
       state: restarted
 
-  - name: mensajes
-    ansible.builtin.command: echo {{message}}
-    
+  - name: mensaje
+    command: echo {{message}}
+
   handlers:
   - name: copiar html
     copy: 
@@ -22,4 +22,5 @@
       dest: /var/www/html
       owner: www-data
       group: www-data
+
 ...
