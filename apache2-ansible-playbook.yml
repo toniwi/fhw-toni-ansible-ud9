@@ -1,0 +1,23 @@
+---
+- name: Playbook2
+  hosts: all
+  become: yes
+  tasks:
+  - name: Instalar
+    apt:
+      name: apache2
+      state: present
+  - name: Iniciar
+    service: 
+      name: apache2
+      state: restarted
+    notify: 
+      - Copiar
+  handlers:
+  - name: copiar html
+    copy: 
+      src: /home/vagrant/ud9-playbooks/ansible.html
+      dest: /var/www/html
+      owner: www-data
+      group: www-data
+...
